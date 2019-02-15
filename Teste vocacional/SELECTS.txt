@@ -1,0 +1,23 @@
+SELECT PARA PEGAR OSPARTICIPANTES E AS VOCAÇÕES.
+
+SELECT
+     participantes.`codParticipante` AS codParticipante,
+     participantes.`participante` AS participante,
+     participantes.`cidade` AS cidade,
+     participantes.`uf` AS uf,
+     participantes.`tel` AS tel,
+     participantes.`email` AS email,     
+(
+SELECT v.vocacao 
+FROM respostas r INNER JOIN alternativas a
+on r.codAlternativa = a.codAlternativa
+INNER JOIN vocacoes v
+on v.codVocacao = a.codVocacao
+INNER JOIN participantes p
+on r.codParticipante = p.codParticipante
+where p.codParticipante = participantes.codParticipante
+group by v.codVocacao limit 1
+
+) as vocacao
+FROM
+     `participantes` participantes

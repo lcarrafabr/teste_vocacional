@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="e53807f3-cc16-4baa-8f7c-e3ab1cdd75ad">
+	<property name="ireport.zoom" value="1.6105100000000019"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     participantes.`codParticipante` AS participantes_codParticipante,
+     participantes.`participante` AS participantes_participante,
+     participantes.`cidade` AS participantes_cidade,
+     participantes.`uf` AS participantes_uf,
+     participantes.`tel` AS participantes_tel,
+     participantes.`email` AS participantes_email
+FROM
+     `participantes` participantes]]>
+	</queryString>
+	<field name="participantes_codParticipante" class="java.lang.Integer"/>
+	<field name="participantes_participante" class="java.lang.String"/>
+	<field name="participantes_cidade" class="java.lang.String"/>
+	<field name="participantes_uf" class="java.lang.String"/>
+	<field name="participantes_tel" class="java.lang.String"/>
+	<field name="participantes_email" class="java.lang.String"/>
+	<group name="participantes_codParticipante">
+		<groupExpression><![CDATA[$F{participantes_codParticipante}]]></groupExpression>
+		<groupHeader>
+			<band height="24">
+				<frame>
+					<reportElement x="39" y="6" width="764" height="15" uuid="a9eeaf42-ffc9-4034-83c8-7a02d6b34da7"/>
+					<textField>
+						<reportElement style="Detail" x="265" y="0" width="135" height="15" uuid="9f3f63da-c6fe-484f-9ffc-40e8ca6a91e3"/>
+						<textElement>
+							<font size="10"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{participantes_cidade}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="Detail" x="400" y="0" width="38" height="15" uuid="88057442-7d4e-4e4b-bca8-450d2b791a14"/>
+						<textElement>
+							<font size="10"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{participantes_uf}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="Detail" x="547" y="0" width="214" height="15" uuid="0b329ace-395e-4f81-9b8b-1c43375a114e"/>
+						<textElement>
+							<font size="10"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{participantes_email}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="Detail" x="438" y="1" width="111" height="14" uuid="7cfc2c52-70a0-4aa7-becf-a1e1f93658e1"/>
+						<textElement>
+							<font size="10"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{participantes_tel}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<rectangle>
+					<reportElement mode="Opaque" x="4" y="9" width="36" height="12" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="a369c4bb-18a4-4478-94b1-57eb4bf0cfd6"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="11">
+				<frame>
+					<reportElement mode="Opaque" x="652" y="0" width="150" height="11" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="cfcdc014-66a0-48e6-b8a1-b55f159b5ae3"/>
+				</frame>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="participantes_participante">
+		<groupExpression><![CDATA[$F{participantes_participante}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+	</group>
+	<background>
+		<band height="575" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="-369" width="20" height="844" backcolor="#CCCCCC" uuid="c984ccd0-0063-456a-add4-cce04d5283ce"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="802" height="67" uuid="201a6e16-12ba-4f04-b74e-a10ce8b6e6ca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="40" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Relatório de participantes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="5" width="802" height="20" backcolor="#666666" uuid="039524be-c880-4e1e-bc8c-b7faf5e73fde"/>
+				<staticText>
+					<reportElement style="Column header" x="124" y="0" width="179" height="15" uuid="173671fa-2d41-46e4-9df8-07c456fec2ff"/>
+					<text><![CDATA[Participante]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="438" y="0" width="38" height="15" uuid="e67dcb9f-83a0-40d7-89cd-434f462fe838"/>
+					<text><![CDATA[UF]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="476" y="0" width="111" height="15" uuid="155dc10f-1c91-4d6f-8d34-3c9831ae1aac"/>
+					<text><![CDATA[Telefone]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="587" y="0" width="213" height="15" uuid="617dc273-8040-4f63-b2e7-d78609478083"/>
+					<text><![CDATA[E-mail]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="303" y="1" width="135" height="15" uuid="92014e4c-f9b3-41ee-8598-92277bdde651"/>
+					<text><![CDATA[Cidade]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch">
+			<textField>
+				<reportElement style="SubTitle" x="111" y="-18" width="181" height="15" uuid="b1d43d4f-9241-44ea-8407-26b15b3902e1"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{participantes_participante}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="49" y="-19" width="39" height="14" forecolor="#000000" uuid="05b08809-56bf-45fa-8aea-c0be3bc85e1a"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{participantes_codParticipante}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="671" y="0" width="131" height="20" forecolor="#000000" uuid="d2b957ef-28fa-46a7-8dfa-655411cd4695"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="96" y="0" width="267" height="20" uuid="61e21703-ea3c-4e43-8efc-7389421fbb70"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Silhouette Title Report]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
